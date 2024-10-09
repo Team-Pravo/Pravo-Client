@@ -7,11 +7,19 @@ void main() {
 }
 
 class _App extends StatelessWidget {
+  Color backgroundColor = const Color.fromRGBO(246, 246, 246, 1);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
       theme: appTheme,
       routerConfig: PravoRouter.router,
+      theme: ThemeData(
+        scaffoldBackgroundColor: backgroundColor,
+        appBarTheme: AppBarTheme(backgroundColor: backgroundColor),
+        bottomNavigationBarTheme:
+            BottomNavigationBarThemeData(backgroundColor: backgroundColor),
+      ),
     );
   }
 }
